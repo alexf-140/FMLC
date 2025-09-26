@@ -1,17 +1,33 @@
 import java.util.*;
 import java.awt.*;
-
+import java.util.scanner;
 public class App{
-    public static int add(int a,int b){
-        while( b != 0){
-            int carry = a & b;
-            a = a ^ b;
-            b = carry << 1;
-        }
-        return a;
-    }
+           
     public static void main(String[] args){
-       
-        System.out.println(add(34,2));
+       Scanner x = new Scanner(System.in);
+        System.out.println("enter first number pls");
+       int n1 = x.nextInt();
+       System.out.println("enter second number pls");
+       int n2 = x.nextInt();
+       System.out.println("choose the operation you need to be done");
+       String operation = x.next();
+       int result;
+       if(operation.equals( "+")){
+        result =  n1 +n2;
+       }
+       else if(operation.equals( "-")){
+        result = n1 - n2;
+       }
+       else if (operation.equals( "*")){
+        result = n1 * n2;
+       }
+       else if (operation.equals( "/")){
+        result = n1 / n2;
+       }
+       else{
+        System.out.println("wrong operation");
+        return;
+       }
+    System.out.println("The result: " + result);   
     }
 }
